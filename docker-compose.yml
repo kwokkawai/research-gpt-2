@@ -1,0 +1,13 @@
+services:
+  app:
+    build: .
+    container_name: researcher-gpt-2
+    volumes:
+      - .:/code
+    ports:
+      - 8504:8501
+      - 11434:11434
+    environment:
+      - OLLAMA_BASE_URL=http://192.168.10.249:11434
+    stdin_open: true # docker run -i
+    tty: true        # docker run -t
